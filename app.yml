@@ -5,14 +5,7 @@ metadata:
   annotations:
     ingress.kubernetes.io/ssl-redirect: "false"
 spec:
-  ingressClassName: nginx
-  defaultBackend:
-    service:
-      name: app-three
-      port:
-      - protocol: TCP
-        number: 80
-        targetPort: 8080
+  ingressClassName: nginx # This MUST match the controller you installed
   rules:
   - http:
       paths:
