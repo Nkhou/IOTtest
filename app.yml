@@ -10,7 +10,9 @@ spec:
     service:
       name: app-three
       port:
+      - protocol: TCP
         number: 80
+        targetPort: 8080
   rules:
   - http:
       paths:
