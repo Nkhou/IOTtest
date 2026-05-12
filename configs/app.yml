@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-three
+  name: nkhoudro
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app-three
+      app: nkhoudro
   template:
     metadata:
       labels:
-        app: app-three
+        app: nkhoudro
     spec:
       containers:
-      - name: app-three
+      - name: nkhoudro
         image: "wil42/playground:v2"
         ports:
         - containerPort: 8888
@@ -22,10 +22,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: app-three
+  name: nkhoudro
 spec:
   selector:
-    app: app-three
+    app: nkhoudro
   ports:
   - protocol: TCP
     port: 80
@@ -46,6 +46,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: app-three
+            name: nkhoudro
             port:
               number: 80
